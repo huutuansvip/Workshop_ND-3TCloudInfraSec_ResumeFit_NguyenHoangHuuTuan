@@ -43,6 +43,7 @@ Leveraging serverless architectures for AI governance enhances security while op
 ---
 
 ### ARCHITECTURE DIAGRAM
+
 ![AI Gateway Architecture Diagram](/images/blog2_architecture.png)
 
 ---

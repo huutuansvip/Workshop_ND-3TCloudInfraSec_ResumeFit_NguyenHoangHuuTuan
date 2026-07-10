@@ -26,6 +26,7 @@ Overall, combining AWS services like Lambda, Firehose, and Network Load Balancer
 ---
 
 ### ARCHITECTURE DIAGRAM
+
 ![CloudWatch Metric Stream to OpenTelemetry Collector Architecture](/images/blog1_architecture.png)
 
 ---

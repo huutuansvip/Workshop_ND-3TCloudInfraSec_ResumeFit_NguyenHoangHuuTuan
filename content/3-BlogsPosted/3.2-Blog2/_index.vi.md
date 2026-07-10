@@ -43,6 +43,7 @@ Việc tận dụng các dịch vụ Serverless để làm lớp quản trị ch
 ---
 
 ### SƠ ĐỒ KIẾN TRÚC HỆ THỐNG
+
 ![AI Gateway Architecture Diagram](/images/blog2_architecture.png)
 
 ---

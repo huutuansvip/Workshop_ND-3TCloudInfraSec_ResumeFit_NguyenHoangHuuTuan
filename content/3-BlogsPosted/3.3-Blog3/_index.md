@@ -45,6 +45,7 @@ Overall, I see this as a highly useful enhancement for AWS Data Lakes, especiall
 ---
 
 ### ARCHITECTURE DIAGRAM
+
 ![Lake Formation Architecture Diagram](/images/blog3_architecture.png)
 
 ---

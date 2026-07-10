@@ -45,6 +45,7 @@ Mình thấy đây là một cải tiến khá hữu ích cho các hệ thống 
 ---
 
 ### SƠ ĐỒ KIẾN TRÚC HỆ THỐNG
+
 ![Lake Formation Architecture Diagram](/images/blog3_architecture.png)
 
 ---

@@ -26,6 +26,7 @@ Nhìn chung, việc kết hợp khéo léo các dịch vụ AWS như Lambda, Fir
 ---
 
 ### SƠ ĐỒ KIẾN TRÚC HỆ THỐNG
+
 ![CloudWatch Metric Stream to OpenTelemetry Collector Architecture](/images/blog1_architecture.png)
 
 ---

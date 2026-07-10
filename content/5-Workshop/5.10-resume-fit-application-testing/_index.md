@@ -25,6 +25,8 @@ pre: " <b> 5.10. </b> "
 <p align="center"><i>JD list interface</i></p>
 ![Upload CV JD interface](/images/5-Workshop/giao_dien_buoc_2_upload_CV_JD.jpg)
 <p align="center"><i>Upload CV JD interface</i></p>
+![Upload CV JD interface (Part 2)](/images/5-Workshop/giao_dien_buoc_2_upload_CV_JD_Part-2.jpg)
+<p align="center"><i>Upload CV JD interface (Part 2)</i></p>
 ![CV list interface](/images/5-Workshop/giao_dien_danh_sach_CV.jpg)
 <p align="center"><i>CV list interface</i></p>
 

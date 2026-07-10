@@ -25,6 +25,8 @@ pre: " <b> 5.10. </b> "
 <p align="center"><i>Giao diện danh sách JD</i></p>
 ![Giao diện upload CV JD](/images/5-Workshop/giao_dien_buoc_2_upload_CV_JD.jpg)
 <p align="center"><i>Giao diện upload CV JD</i></p>
+![Giao diện upload CV JD (Phần 2)](/images/5-Workshop/giao_dien_buoc_2_upload_CV_JD_Part-2.jpg)
+<p align="center"><i>Giao diện upload CV JD (Phần 2)</i></p>
 ![Giao diện danh sách CV](/images/5-Workshop/giao_dien_danh_sach_CV.jpg)
 <p align="center"><i>Giao diện danh sách CV</i></p>
 

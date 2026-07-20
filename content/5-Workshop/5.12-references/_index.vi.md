@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.12. </b> "
 ---
 
-# TÀI LIỆU THAM KHẢO
-
 Trang này tổng hợp các tài liệu tham khảo được sử dụng trong suốt dự án Resume Fit.
 
 ## 1. Source code and demo

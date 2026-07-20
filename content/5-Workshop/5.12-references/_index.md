@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.12. </b> "
 ---
 
-# REFERENCES
-
 This page consolidates the references used throughout the Resume Fit project.
 
 ## 1. Source code and demo

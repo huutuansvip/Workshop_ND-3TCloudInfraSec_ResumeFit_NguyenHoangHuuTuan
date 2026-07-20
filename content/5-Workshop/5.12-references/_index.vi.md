@@ -1,46 +1,77 @@
 ---
-title: "3. Cost Breakdown"
+title: "Tài liệu tham khảo"
 date: 2024-01-01
 weight: 12
 chapter: false
 pre: " <b> 5.12. </b> "
 ---
 
-Báo cáo chi phí dưới đây được lập dựa trên **AWS Pricing Calculator**, ước tính cho việc triển khai hệ thống tại khu vực **US East (N. Virginia) – us-east-1**, sử dụng biểu giá **AWS On-Demand** với thời gian vận hành **730 giờ/tháng (24/7)**. Hệ thống được thiết kế tối giản nhằm phục vụ mục đích demo và chấm điểm đồ án, do đó lưu lượng truy cập dự kiến ở mức rất thấp. Báo cáo không áp dụng các chương trình tối ưu chi phí dài hạn như Reserved Instance hay Savings Plans.
+Trang này tổng hợp các tài liệu tham khảo được sử dụng trong suốt dự án Resume Fit.
 
-### Bảng Dự Tính Chi Phí Triển Khai (Monthly)
+## 1. Source code and demo
+
+- Project source: [thuanthien-tran/resume-fit](https://github.com/thuanthien-tran/resume-fit)
+- Resume Fit demo on AWS: [http://resumematching-alb-1223673352.us-east-1.elb.amazonaws.com](http://resumematching-alb-1223673352.us-east-1.elb.amazonaws.com)
+
+## 2. AWS services used by the project
+
+- [Amazon Virtual Private Cloud (VPC)](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+- [Amazon Elastic Compute Cloud (EC2)](https://docs.aws.amazon.com/ec2/latest/instancetypes/what-is-amazon-ec2.html)
+- [Amazon Simple Storage Service (S3)](https://docs.aws.amazon.com/s3/latest/userguide/Welcome.html)
+- [Amazon Relational Database Service (RDS)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
+- [Elastic Load Balancing (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
+- [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)
+- [Amazon Simple Queue Service (SQS)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
+- [AWS Identity and Access Management (IAM)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+
+## 3. Cost Breakdown
+
+Bảng dưới đây trình bày dự toán chi phí hàng tháng cho hệ thống, được tính toán dựa trên AWS Pricing Calculator.
+
+**Giả định tính toán:**
+- **Khu vực (Region):** US East (N. Virginia) – us-east-1.
+- **Thời gian vận hành:** 730 giờ/tháng (24/7).
+- **Mô hình định giá:** AWS On-Demand Pricing (Không sử dụng Reserved Instance hay Savings Plans).
+- **Đặc thù hệ thống:** Hệ thống chỉ phục vụ demo và chấm đồ án nên lưu lượng truy cập rất thấp.
+
+### Bảng dự toán chi phí
 
 | STT | AWS Service | Configuration | Quantity | Estimated Monthly Cost (USD) | Notes | Total (USD) |
-|---|---|---|---|---|---|---|
-| 1 | Amazon VPC | 01 VPC, 01 IGW, 02 Public Subnets, 04 Private Subnets, Route Tables | 1 | 0.00 | Dịch vụ định tuyến và phân vùng mạng cơ bản không tính phí. | 0.00 |
-| 2 | AWS Security Group | Các quy tắc tường lửa bảo vệ các tài nguyên | 1 | 0.00 | Tính năng bảo mật đi kèm miễn phí. | 0.00 |
-| 3 | NAT Gateway | Xử lý lưu lượng từ Private Subnet ra Internet (~1 GB data) | 2 | 32.85 | 0.045 USD/giờ * 730 giờ + 0.045 USD/GB | 65.70 |
-| 4 | Amazon EC2 | t3.micro (Linux), On-Demand | 3 | 7.59 | 0.0104 USD/giờ * 730 giờ | 22.78 |
-| 5 | Amazon EBS | gp3, 30 GB/volume | 3 | 2.40 | 0.08 USD/GB-tháng | 7.20 |
-| 6 | Auto Scaling Group | 01 Launch Template, 01 ASG | 1 | 0.00 | Dịch vụ Auto Scaling miễn phí (chỉ tính phí tài nguyên EC2/EBS tạo ra). | 0.00 |
-| 7 | Application Load Balancer | 01 ALB, 01 Target Group (Ước tính < 1 LCU) | 1 | 22.27 | 0.0225 USD/giờ (16.43 USD) + phí LCU cơ bản. | 22.27 |
-| 8 | Amazon RDS | Single-AZ, db.t3.micro, 20 GB gp3 | 1 | 14.71 | Instance: 12.41 USD (0.017 USD/giờ), Storage: 2.30 USD | 14.71 |
-| 9 | Amazon S3 | Standard Storage (5 GB) | 1 | 0.12 | 0.023 USD/GB-tháng | 0.12 |
-| 10 | Amazon SQS | Standard Queue & DLQ (< 1 triệu requests) | 1 | 0.00 | Nằm trong giới hạn Free Tier. | 0.00 |
-| 11 | AWS Secrets Manager | 01 Secret (< 10,000 API calls) | 1 | 0.40 | 0.40 USD/secret/tháng | 0.40 |
-| 12 | Amazon Cognito | Quản lý người dùng (< 50,000 MAU) | 1 | 0.00 | Nằm trong giới hạn Free Tier (dưới 50,000 MAU). | 0.00 |
-| 13 | Amazon CloudWatch | Metrics & Logs cơ bản (< 5 GB) | 1 | 0.00 | Nằm trong giới hạn Free Tier. | 0.00 |
-| 14 | AWS Systems Manager | Session Manager (quản lý truy cập an toàn) | 1 | 0.00 | Tính năng kết nối đi kèm miễn phí. | 0.00 |
+|:---:|:---|:---|:---:|---:|:---|---:|
+| 1 | Amazon VPC | Public Subnet (02), Private Application Subnet (02), Private Database Subnet (02), Internet Gateway (01), Security Group | 1 | 0.00 | Dịch vụ miễn phí | 0.00 |
+| 2 | NAT Gateway | us-east-1 (0.045 USD/giờ) | 2 | 32.85 | 02 NAT Gateway | 65.70 |
+| 3 | Amazon EC2 | t3.micro Linux (0.0104 USD/giờ) | 3 | 7.59 | 01 Backend, 02 EC2 trong ASG | 22.77 |
+| 4 | Amazon EBS | gp3, 30 GB/EC2 (0.08 USD/GB-tháng) | 3 | 2.40 | Cấp phát cùng EC2 | 7.20 |
+| 5 | Auto Scaling Group | Kèm theo Launch Template, AMI | 1 | 0.00 | Dịch vụ miễn phí | 0.00 |
+| 6 | Application Load Balancer | Kèm theo Target Group (01) | 1 | 16.43 | Phí LCU không đáng kể | 16.43 |
+| 7 | Amazon RDS | db.t3.micro, Single-AZ (0.017 USD/giờ) | 1 | 12.41 | Lưu trữ CSDL quan hệ | 12.41 |
+| 8 | Amazon RDS Storage | 20 GB gp3 (0.115 USD/GB-tháng) | 1 | 2.30 | Dung lượng ổ cứng RDS | 2.30 |
+| 9 | Amazon S3 | Standard, 5 GB (0.023 USD/GB-tháng) | 1 | 0.12 | Lưu trữ dữ liệu tĩnh | 0.12 |
+| 10 | Amazon SQS | Standard Queue & DLQ | 2 | 0.00 | Miễn phí dưới 1 triệu request | 0.00 |
+| 11 | AWS Secrets Manager | 01 Secret | 1 | 0.40 | 0.40 USD/secret/tháng | 0.40 |
+| 12 | Amazon Cognito | Dưới 50.000 MAU | 1 | 0.00 | Dịch vụ miễn phí | 0.00 |
+| 13 | AWS Systems Manager | Session Manager | 1 | 0.00 | Dịch vụ miễn phí | 0.00 |
+| 14 | Amazon CloudWatch | Metrics + Logs cơ bản | 1 | 0.00 | Dịch vụ miễn phí | 0.00 |
+| **Tổng** | | | | | | **127.33** |
 
-### Phân Tích Tổng Chi Phí
+### Phân tích và Đánh giá
 
-**1. Tổng chi phí triển khai mỗi tháng:**
-Dựa trên bảng ước tính, tổng chi phí để duy trì hệ thống chạy 24/7 trong một tháng là **133.18 USD**.
+**Tổng chi phí triển khai mỗi tháng:**
+Tổng chi phí ước tính để duy trì hệ thống hoạt động 24/7 là **127.33 USD/tháng**.
 
-**2. Phân tích dịch vụ chiếm tỷ trọng chi phí cao nhất:**
-- **NAT Gateway** là dịch vụ tiêu tốn nhiều chi phí nhất, chiếm khoảng **49.3%** tổng chi phí (65.70 USD). Việc triển khai 02 NAT Gateways nhằm đảm bảo tính sẵn sàng cao (High Availability) cho các Private Subnets ở 2 Availability Zones khác nhau đã làm tăng đáng kể chi phí cố định (hourly charge).
-- **Compute (EC2 & ALB)** là nhóm chi phí lớn thứ hai. Application Load Balancer (22.27 USD) và 3 instances EC2 t3.micro (22.78 USD) phục vụ cho Web/App servers chiếm tỷ trọng đáng kể do yêu cầu duy trì liên tục để nhận traffic.
+**Phân tích thành phần chi phí:**
+Khoản chi phí cao nhất thuộc về **NAT Gateway (65.70 USD, chiếm 51.6%)**, do kiến trúc sử dụng 02 NAT Gateway phân bổ để đáp ứng mạng Private. Đứng thứ hai là nhóm **Compute và Load Balancing (EC2 và ALB)** chiếm khoảng 30.7% tổng chi phí. Chi phí Database (RDS) chiếm khoảng 11.5%. Các dịch vụ về Storage, Messaging, Security và Monitoring chiếm tỉ trọng rất nhỏ hoặc hoàn toàn miễn phí.
 
-**3. Đánh giá tính phù hợp với giới hạn AWS Credits (200 USD):**
-Tổng chi phí ước tính là **133.18 USD/tháng**, hoàn toàn nằm trong phạm vi giới hạn AWS Credits 200 USD. Hệ thống đáp ứng tốt mục tiêu chạy demo và chấm đồ án trong thời gian 1 tháng mà không gây rủi ro vượt ngân sách. Tuy nhiên, nếu thời gian chấm đồ án kéo dài hơn 1.5 tháng, ngân sách sẽ bị cạn kiệt.
+**Đánh giá tính khả thi (AWS Credits 200 USD):**
+Với giới hạn AWS Credits là **200 USD**, chi phí duy trì 127.33 USD/tháng là hoàn toàn phù hợp và an toàn. Hệ thống có thể duy trì hoạt động liên tục trong suốt khoảng 1.5 tháng để phục vụ quá trình demo và chấm đồ án mà không vượt quá ngân sách tín dụng cho phép.
 
-**4. Đề xuất các biện pháp tối ưu chi phí (Giữ nguyên kiến trúc):**
-Mặc dù hệ thống đã đáp ứng ngân sách 200 USD, các phương pháp sau có thể được áp dụng để tối ưu thêm chi phí mà không làm thay đổi thiết kế kiến trúc hiện tại:
-- **Tối ưu thời gian hoạt động (Start/Stop Scheduling):** Hệ thống chỉ phục vụ demo, do đó không nhất thiết phải hoạt động 24/7. Có thể cấu hình EventBridge hoặc AWS Lambda để tự động tắt EC2 instances và RDS vào ban đêm (ví dụ: tắt từ 22h00 đến 08h00), giúp giảm đến ~40% chi phí Compute và Database.
-- **Sử dụng EC2 Spot Instances cho Auto Scaling Group:** 02 EC2 instances nằm trong ASG có thể được thay thế bằng Spot Instances thay vì On-Demand. Spot Instances có thể giúp tiết kiệm lên đến 70-90% chi phí cho phần Compute mở rộng mà vẫn không làm thay đổi kiến trúc Load Balancing hay ASG.
-- **Tối ưu dung lượng EBS:** Thay vì cấp phát 30 GB EBS gp3 cho mỗi EC2 instance ngay từ đầu, có thể giảm xuống 10-15 GB nếu source code và hệ điều hành không yêu cầu quá lớn. Tính năng Elastic Block Store cho phép mở rộng dung lượng linh hoạt khi cần thiết.
+**Đề xuất tối ưu hóa chi phí:**
+Để tối ưu hóa chi phí mà không thay đổi kiến trúc hiện tại, có thể áp dụng các biện pháp sau:
+- **Tắt các dịch vụ Compute ngoài giờ sử dụng:** Thiết lập AWS Lambda và EventBridge để tự động tắt (Stop) các instance EC2 và RDS vào ban đêm hoặc những khoảng thời gian không dùng đến, qua đó tiết kiệm đáng kể chi phí tính toán.
+- **Giảm số lượng NAT Gateway:** Mặc dù theo kiến trúc chuẩn cần 02 NAT Gateway để dự phòng, nhưng đối với môi trường demo đồ án, có thể cấu hình Private Subnet trỏ tất cả về 01 NAT Gateway duy nhất. Việc này sẽ giảm ngay 50% chi phí mạng (tiết kiệm ~32.85 USD/tháng) mà vẫn duy trì đủ chức năng.
+
+## 4. Cost and resource cleanup
+
+- [AWS Pricing Calculator](https://calculator.aws/)
+- [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/)
+- [AWS Billing and Cost Management](https://docs.aws.amazon.com/cost-management/latest/userguide/what-is-costmanagement.html)

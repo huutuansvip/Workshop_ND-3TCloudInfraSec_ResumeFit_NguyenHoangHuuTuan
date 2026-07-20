@@ -31,10 +31,10 @@ chapter: false
 
 ### Nội dung báo cáo
 
-1. <a href="1-Worklog/" >Worklog</a>
-2. <a href="2-Proposal/" >Proposal</a>
-3. <a href="3-BlogsPosted/" >Các bài blogs đã đăng</a>
-4. <a href="4-EventParticipated/" >Các events đã tham gia</a>
-5. <a href="5-Workshop/" >Workshop</a>
-6. <a href="6-Self-evaluation/" >Tự đánh giá</a>
-7. <a href="7-Feedback/" >Chia sẻ, đóng góp ý kiến</a>
+1. <a href="1-worklog/" >Worklog</a>
+2. <a href="2-proposal/" >Proposal</a>
+3. <a href="3-blogsposted/" >Các bài blogs đã đăng</a>
+4. <a href="4-eventparticipated/" >Các events đã tham gia</a>
+5. <a href="5-workshop/" >Workshop</a>
+6. <a href="6-self-evaluation/" >Tự đánh giá</a>
+7. <a href="7-feedback/" >Chia sẻ, đóng góp ý kiến</a>

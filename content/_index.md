@@ -31,10 +31,10 @@ chapter: false
 
 ### Report Content
 
-1. <a href="1-Worklog/" >Worklog</a>
-2. <a href="2-Proposal/" >Proposal</a>
-3. <a href="3-BlogsPosted/" >BlogsPosted</a>
-4. <a href="4-EventParticipated/" >Events Participated</a>
-5. <a href="5-Workshop/" >Workshop</a>
-6. <a href="6-Self-evaluation/" >Self-evaluation</a>
-7. <a href="7-Feedback/" >Sharing and Feedback</a>
+1. <a href="1-worklog/" >Worklog</a>
+2. <a href="2-proposal/" >Proposal</a>
+3. <a href="3-blogsposted/" >BlogsPosted</a>
+4. <a href="4-eventparticipated/" >Events Participated</a>
+5. <a href="5-workshop/" >Workshop</a>
+6. <a href="6-self-evaluation/" >Self-evaluation</a>
+7. <a href="7-feedback/" >Sharing and Feedback</a>

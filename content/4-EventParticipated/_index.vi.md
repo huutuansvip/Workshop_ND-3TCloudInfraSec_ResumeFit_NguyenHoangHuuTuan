@@ -11,7 +11,7 @@ pre: " <b> 4. </b> "
 
 Trong quá trình thực tập, tôi đã tham gia 2 events, với mỗi event là một trải nghiệm đáng nhớ với những kiến thức mới, hay và bổ ích, cùng với đó là nhứng món quà và những khoảnh khắc rất tuyệt vời.
 
-### <a href="4.1-Event1/" >Event 1</a>
+### <a href="4.1-event1/" >Event 1</a>
 &emsp;**Tên sự kiện:** FCAJ Community Day (Sự kiện gặp gỡ của cộng đồng FCAJ / AWS Study Group)
 
 &emsp;**Thời gian:** Sáng ngày 09/05/2026
@@ -22,7 +22,7 @@ Trong quá trình thực tập, tôi đã tham gia 2 events, với mỗi event l
 
 
 
-### <a href="4.2-Event2/" >Event 2</a>
+### <a href="4.2-event2/" >Event 2</a>
 &emsp;**Tên sự kiện:** FCAJ Community Day (AWS Study Group)
 
 &emsp;**Thời gian:** Sáng ngày 23/05/2026

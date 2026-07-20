@@ -19,10 +19,10 @@ pre: " <b> 4.1. </b> "
 
 ### Danh Sách Diễn Giả
 Sự kiện có sự góp mặt của nhiều diễn giả với các chủ đề thiết thực:
-* **Diễn giả 1 (Long - Ban tổ chức):** Trình bày về chủ đề *"Hack não bộ với Dopamine"*.
-* **Diễn giả 2 (Thịnh):** Trình bày về *"Ultimate Prompt Engineering"* và kiến trúc AWS.
-* **Diễn giả 3 (Khang):** Solution Architect tại *Cloud Kinetics*.
-* **Diễn giả 4 (Thảo):** Software Developer tại *Ngân hàng Quốc tế Việt Nam (VIB)*.
+* **Diễn giả 1 (Anh Long - Ban tổ chức):** Trình bày về chủ đề *"Hack não bộ với Dopamine"*.
+* **Diễn giả 2 (Anh Thịnh):** Trình bày về *"Ultimate Prompt Engineering"* và kiến trúc AWS.
+* **Diễn giả 3 (Anh Khang):** Solution Architect tại *Cloud Kinetics*.
+* **Diễn giả 4 (Chị Thảo):** Software Developer tại *Ngân hàng Quốc tế Việt Nam (VIB)*.
 
 ### Nội Dung Nổi Bật
 

@@ -19,10 +19,10 @@ pre: " <b> 4.1. </b> "
 
 ### Speakers
 The event featured multiple speakers sharing practical and inspiring topics:
-* **Speaker 1 (Long - Organizers):** Topic: *"Hacking the Brain with Dopamine"*.
-* **Speaker 2 (Thinh):** Topic: *"Ultimate Prompt Engineering"* and AWS architecture.
-* **Speaker 3 (Khang):** Solution Architect at *Cloud Kinetics*.
-* **Speaker 4 (Thao):** Software Developer at *Vietnam International Bank (VIB)*.
+* **Speaker 1 (Mr. Long - Organizers):** Topic: *"Hacking the Brain with Dopamine"*.
+* **Speaker 2 (Mr. Thinh):** Topic: *"Ultimate Prompt Engineering"* and AWS architecture.
+* **Speaker 3 (Mr. Khang):** Solution Architect at *Cloud Kinetics*.
+* **Speaker 4 (Miss Thao):** Software Developer at *Vietnam International Bank (VIB)*.
 
 ### Key Highlights
 
